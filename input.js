@@ -12,27 +12,24 @@ const setupInput = function (conn) {
 
 };
 
+const keyMap = {
+  'w': 'Move: Up',
+  'a': 'Move: Left',
+  's': 'Move: Down',
+  'd': 'Move: Right'
+};
+
 const handleUserInput = function (key) {
 
   if (key === "\u0003") {
     process.exit();
   }
 
-  if (key === "w") {
-    connection.write("Move: Up");
-  }
-
-  if (key === "a") {
-    connection.write("Move: Left");
-  }
-
-  if (key === "s") {
-    connection.write("Move: Down");
-  }
+  const command = keyMap[key];
   
-  if (key === "d") {
-    connection.write("Move: Right");
-  }
+  if (command) {
+    connection.write(command);
+  };
 
 };
 
