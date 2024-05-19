@@ -1,3 +1,5 @@
+let connection;
+
 const setupInput = function (conn) {
   connection = conn;
 
@@ -12,28 +14,26 @@ const setupInput = function (conn) {
 
 const handleUserInput = function (key) {
 
-
   if (key === "\u0003") {
     process.exit();
   }
+
   if (key === "w") {
     connection.write("Move: Up");
   }
+
   if (key === "a") {
     connection.write("Move: Left");
   }
+
   if (key === "s") {
     connection.write("Move: Down");
   }
+  
   if (key === "d") {
     connection.write("Move: Right");
   }
 
-
-
-
 };
-
-let connection;
 
 module.exports = setupInput;
