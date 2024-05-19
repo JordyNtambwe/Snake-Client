@@ -1,5 +1,5 @@
 const net = require("net");
-const connect = require("./connect");
+const connect = require("../connect");
 
 console.log("Connecting ...");
 connect();
