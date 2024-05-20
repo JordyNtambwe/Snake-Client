@@ -8,7 +8,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-![Capture](https://github.com/JordyNtambwe/Snake-Client/assets/152664833/4e804c91-c0be-4f06-a568-557fc16bad95)
+![Capture](https://github.com/JordyNtambwe/Snake-Client/assets/152664833/27f94731-d934-47eb-bcd2-0ab260680afa)
 
 ## Getting Started!
 
