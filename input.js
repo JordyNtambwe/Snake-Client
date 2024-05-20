@@ -1,38 +1,41 @@
 let connection;
 
-const keyMap = {
-
-  w: 'Move: Up',
-  a: 'Move: Left',
-  s: 'Move: Down',
-  d: 'Move: Right'
-
-};
-
 const handleUserInput = function (key) {
 
   if (key === "\u0003") {
     process.exit();
   }
 
-  const command = keyMap[key];
+  const keyMap = {
 
-  if (command) {
-    connection.write(command);
-  };
+  w: "Move: up",
+  a: "Move: left",
+  s: "Move: down",
+  d: "Move: right",
+  1: "Say: Good Game!",
+  2: "Say: That's it!?",
+  3: "Say: Hummy!",
+  4: "Say: Next Time!"
 
 };
 
-const setupInput = function (conn) {
+  const command = keyMap[key];
+  
+  if (command) {
+    connection.write(command);
+  }
 
+};
+
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
+  stdin.setEncoding('utf8');
+  stdin.on('data', handleUserInput);
   stdin.resume();
-  stdin.on("data", handleUserInput); 
   return stdin;
-
 };
 
+//EXPORT
 module.exports = setupInput;
