@@ -1,22 +1,12 @@
 let connection;
 
-const setupInput = function (conn) {
-  connection = conn;
-
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput); 
-  return stdin;
-
-};
-
 const keyMap = {
-  'w': 'Move: Up',
-  'a': 'Move: Left',
-  's': 'Move: Down',
-  'd': 'Move: Right'
+
+  w: 'Move: Up',
+  a: 'Move: Left',
+  s: 'Move: Down',
+  d: 'Move: Right'
+
 };
 
 const handleUserInput = function (key) {
@@ -26,10 +16,22 @@ const handleUserInput = function (key) {
   }
 
   const command = keyMap[key];
-  
+
   if (command) {
     connection.write(command);
   };
+
+};
+
+const setupInput = function (conn) {
+
+  connection = conn;
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume();
+  stdin.on("data", handleUserInput); 
+  return stdin;
 
 };
 
