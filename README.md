@@ -8,7 +8,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["\Users\user\Pictures\Capture.PNG"](#)
+!["/assets/images/electrocat.png"](#)
 
 ## Getting Started!
 
